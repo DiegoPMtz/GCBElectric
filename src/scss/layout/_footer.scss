@@ -1,0 +1,42 @@
+.footer{
+    padding: $separacion / 2;
+    background-color: $grisOscuro;
+
+    .contenedor-footer{
+        padding-top: $separacion / 2;
+    }
+
+    .navegacion-footer{
+        visibility: visible;
+        height: auto;
+        color: $blanco;
+        @include tablet{
+            display: flex;
+            align-items: center;
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        a{
+            color: $blanco;
+            text-decoration: none;
+            font-size: 2.2rem;
+            display: block;
+            text-align: center;
+    
+            @include tablet{
+                margin-right: 2rem;
+                font-size: 2.8rem;
+    
+                &:last-of-type{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .copyright{
+        color: $blanco;
+        text-align: center;
+    }
+}

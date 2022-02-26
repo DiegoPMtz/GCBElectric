@@ -1,0 +1,20 @@
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/globales';
+@import 'base/utilidades';
+@import 'base/darkMode';
+
+
+// UI //
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navegacion';
+@import 'layout/iconos';
+@import 'layout/botones';
+@import 'layout/formularios';
+
+// paginas internas
+
+@import 'internas/admin.scss'

@@ -1,0 +1,46 @@
+.no-webp .inicio{
+    background-image: url(../../../build/img/tormenta.jpg);
+}
+
+.webp .inicio{
+    background-image: url(../../../build/img/tormenta.webp);
+}
+
+.header{
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
+
+    &.inicio{
+        background-position: center center;
+        background-size: cover;
+        @include tablet{
+            min-height: 2rem;
+        }
+
+        .contenido-header{
+            @include tablet{
+                min-height: 50rem;
+            }
+        }
+    }
+
+    .logo{
+        @include tablet{
+            width: 8rem;
+        }
+    }
+}
+
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1{
+        text-align: left;
+        color: $blanco;
+        font-weight: $bold;
+        line-height: 2;
+        max-width: 60rem;
+    }
+}
