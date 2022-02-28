@@ -28,10 +28,9 @@
                             <a href="quienes_somos.php">Quienes somos</a>
                             <a href="productos.php">Productos</a>
                             <a href="contacto.php">Contacto</a>
-                            <a href="facturacion.php">Facturacion</a>
                         </nav>
                     </div>
             </div> <!--/Barra-->
-
+            <?php echo $inicio ? '<h1>Lideres Proveedores Integrales</h1>' : ''; ?>
         </div> 
     </header>

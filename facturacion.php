@@ -11,7 +11,6 @@ $errores = [];
 
 $RFC = '';
 $RazonSocial = '';
-$RegimendeCapital = '';
 $CorreoElectronico = '';
 $RegimenFiscal = '';
 $UsoCFDI = '';
@@ -30,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $RFC = $_POST['RFC'];
     $RazonSocial = $_POST['Razonsocial'];
-    $RegimendeCapital = $_POST['Regimendecapital'];
     $CorreoElectronico = $_POST['Correoelectronico'];
     $RegimenFiscal = $_POST['Regimenfiscal'];
     $UsoCFDI = $_POST['UsoCFDI'];
@@ -46,10 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$RazonSocial) {
         $errores[] = "Debes añadir una Razon Social";
-    }
-
-    if (!$RegimendeCapital) {
-        $errores[] = "Por favor ingresa un Regimen de Capital";
     }
 
     if (!$CorreoElectronico) {
@@ -92,14 +86,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errores)) {
         //insertar en la bd
-        $query = "INSERT INTO Clientes VALUES('$RFC', '$RazonSocial', '$RegimendeCapital', '$CorreoElectronico', '$RegimenFiscal', '$UsoCFDI', '$Calle', '$CP', '$Colonia', '$Ciudad', '$Estado'); ";
+        $query = "INSERT INTO Clientes VALUES('$RFC', '$RazonSocial', '$CorreoElectronico', '$RegimenFiscal', '$UsoCFDI', '$Calle', '$CP', '$Colonia', '$Ciudad', '$Estado'); ";
 
         // echo $query;
 
         $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
-            echo "Insertado Correctamente";
+            // echo "Insertado Correctamente";
+            echo '<script type="text/javascript">
+        alert("Gracias por rellenar el formulario");
+        window.location.href="index.php";
+        </script>';
         }
     }
 }
@@ -141,9 +139,6 @@ incluirTemplate('header');
 
         <label for="Razonsocial">Razon social</label>
         <input type="text" name="Razonsocial" id="Razonsocial" value="<?php echo "$RazonSocial" ?>">
-
-        <label for="Regimendecapital">Regimen de Capital</label>
-        <input type="text" name="Regimendecapital" id="Regimendecapital" value="<?php echo "$RegimendeCapital" ?>">
 
         <label for="Correoelectronico">Correo electronico</label>
         <input type="email" name="Correoelectronico" id="Correoelectronico" value="<?php echo "$CorreoElectronico" ?>">
